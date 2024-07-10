@@ -1,6 +1,8 @@
+import 'package:Bookly/Features/Home/presentation/view/widgets/book_action.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/book_rating.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/custome_listview_item.dart';
 import 'package:Bookly/core/style.dart';
+import 'package:Bookly/core/widgets/book_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -29,12 +31,13 @@ class BookDetailesView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * .24),
                 child: CustomListViewItem()),
-                SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             SizedBox(
               width: MediaQuery.of(context).size.width * .5,
               child: const Text(
@@ -45,7 +48,7 @@ class BookDetailesView extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 3, 
+              height: 3,
             ),
             const Text(
               "3k reviews ",
@@ -55,6 +58,15 @@ class BookDetailesView extends StatelessWidget {
               height: 3,
             ),
             const BookRating(),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * .07,
+                  vertical: 10),
+              child: BooksAction(),
+            )
           ],
         ),
       ),
