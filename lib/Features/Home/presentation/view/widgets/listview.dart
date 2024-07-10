@@ -15,6 +15,7 @@ class CustomeCardSlider extends StatelessWidget {
           return  Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.0),
             child: CustomListViewItem(),
+            
           );
         },
       ),
