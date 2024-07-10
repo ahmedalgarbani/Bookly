@@ -1,5 +1,7 @@
 import 'package:Bookly/Features/Home/presentation/view/widgets/bestseller_listview.dart';
+import 'package:Bookly/core/app_route.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerItemListView extends StatelessWidget {
   const BestSellerItemListView({super.key});
@@ -10,11 +12,16 @@ class BestSellerItemListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 10,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(vertical: 4.0),
-            child: BestSellerListView(),
+          return GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(AppRoute.KBookDetailsRouter);
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(vertical: 4.0),
+              child: BestSellerListView(),
+            ),
           );
         },
       ),

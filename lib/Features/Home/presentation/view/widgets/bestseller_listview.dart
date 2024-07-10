@@ -11,7 +11,7 @@ class BestSellerListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        BestSellerSlideImage(),
+        const BestSellerSlideImage(),
         const SizedBox(
           width: 15,
         ),

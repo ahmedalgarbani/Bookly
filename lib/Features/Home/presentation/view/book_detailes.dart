@@ -1,6 +1,7 @@
 import 'package:Bookly/Features/Home/presentation/view/widgets/book_action.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/book_rating.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/custome_listview_item.dart';
+import 'package:Bookly/Features/Home/presentation/view/widgets/listview.dart';
 import 'package:Bookly/core/style.dart';
 import 'package:Bookly/core/widgets/book_btn.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,15 +19,15 @@ class BookDetailesView extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.shopping_cart),
             ),
           ]),
-      body: Container(
+      body:  SizedBox(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,8 +35,8 @@ class BookDetailesView extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * .24),
-                child: CustomListViewItem()),
-            SizedBox(
+                child: const CustomListViewItem()),
+           const SizedBox(
               height: 30,
             ),
             SizedBox(
@@ -58,18 +59,51 @@ class BookDetailesView extends StatelessWidget {
               height: 3,
             ),
             const BookRating(),
-            SizedBox(
+           const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * .07,
                   vertical: 10),
-              child: BooksAction(),
-            )
+              child: const BooksAction(),
+            ),
+           const SizedBox(
+              height: 30,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "You can also like",
+                style: Style.textStyle14.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+           const SizedBox(height: 20,),
+           const RelatedListView(),
           ],
         ),
       ),
     );
   }
 }
+
+class RelatedListView extends StatelessWidget {
+  const RelatedListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height *.18,
+      child: ListView.builder(
+        scrollDirection:Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 2),
+          child: CustomListViewItem());
+      }),
+    );
+  }
+}
+
+

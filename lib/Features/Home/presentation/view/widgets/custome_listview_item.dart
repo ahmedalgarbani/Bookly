@@ -9,22 +9,16 @@ class CustomListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-       
-        GoRouter.of(context).push(AppRoute.KBookDetailsRouter);
-      },
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height * .23,
-        
-        child: AspectRatio(
-          aspectRatio: 2.7 / 4,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-                image: DecorationImage(
-                    image: AssetImage(KrowSlide), fit: BoxFit.cover)),
-          ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .23,
+      
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              image: DecorationImage(
+                  image: AssetImage(KrowSlide), fit: BoxFit.cover)),
         ),
       ),
     );
