@@ -3,6 +3,7 @@ import 'package:Bookly/Features/Home/presentation/view/widgets/custom_appbar.dar
 import 'package:Bookly/Features/Home/presentation/view/widgets/listview.dart';
 import 'package:Bookly/constant.dart';
 import 'package:Bookly/core/style.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,6 +35,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverFillRemaining(
+
                 child: BestSellerItemListView(),
               ),
             ],
