@@ -3,6 +3,7 @@ import 'package:Bookly/Features/Home/presentation/view/home.dart';
 import 'package:Bookly/Features/Splash/presentation/view/splash.dart';
 import 'package:Bookly/Features/search/presentation/view/search.dart';
 import 'package:go_router/go_router.dart';
+
 //-------
 abstract class AppRoute {
   static const KHomePageRouter = "/homePage";

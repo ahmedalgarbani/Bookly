@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +19,25 @@ class SearchBody extends StatelessWidget {
           TextField(
             decoration: InputDecoration(
                 hintText: 'Search',
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white)),
                 suffixIcon: IconButton(
                     onPressed: () {}, icon: const Icon(Icons.search)),
                 border: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white))),
           ),
-          SizedBox(height: 10,),
-          Expanded(child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-            return Padding(
-              
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: BestSellerListView(),
-            );
-          }))
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 4),
+                      child: BestSellerListView(),
+                    );
+                  }))
         ],
       ),
     ));

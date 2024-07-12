@@ -7,16 +7,20 @@ class RelatedDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-       Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "You can also like",
-                  style: Style.textStyle14.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
-                         const SizedBox(height: 20,),
-                         const RelatedListView(),
-    ],);
+    return Column(
+      children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "You can also like",
+            style: Style.textStyle14.copyWith(fontWeight: FontWeight.bold),
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const RelatedListView(),
+      ],
+    );
   }
 }

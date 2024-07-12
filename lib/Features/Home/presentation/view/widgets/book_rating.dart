@@ -11,9 +11,7 @@ class BookRating extends StatelessWidget {
       children: [
         Icon(Icons.star_purple500_sharp, color: Colors.yellow),
         Text("4.5", style: Style.textStyle16),
-        Opacity(
-          opacity: .5,
-          child: Text("(502)", style: Style.textStyle14)),
+        Opacity(opacity: .5, child: Text("(502)", style: Style.textStyle14)),
       ],
     );
   }

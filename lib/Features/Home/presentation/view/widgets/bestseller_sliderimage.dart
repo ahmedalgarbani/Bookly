@@ -1,7 +1,6 @@
 import 'package:Bookly/constant.dart';
 import 'package:flutter/material.dart';
 
-
 class BestSellerSlideImage extends StatelessWidget {
   const BestSellerSlideImage({
     super.key,
@@ -24,5 +23,3 @@ class BestSellerSlideImage extends StatelessWidget {
     );
   }
 }
-
-

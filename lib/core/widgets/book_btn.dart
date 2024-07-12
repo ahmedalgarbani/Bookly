@@ -2,12 +2,12 @@ import 'package:Bookly/core/style.dart';
 import 'package:flutter/material.dart';
 
 class DetailsButton extends StatelessWidget {
-  const DetailsButton({super.key,
-  required this.backgroundColor,
-  required this.borderRadius,
-  required this.buttonText,
-  required this.textColor
-  });
+  const DetailsButton(
+      {super.key,
+      required this.backgroundColor,
+      required this.borderRadius,
+      required this.buttonText,
+      required this.textColor});
   final Color backgroundColor;
   final Color textColor;
   final BorderRadius borderRadius;
@@ -19,10 +19,9 @@ class DetailsButton extends StatelessWidget {
       child: TextButton(
           onPressed: () {},
           style: TextButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                  borderRadius: borderRadius),
-              backgroundColor: backgroundColor
-              ,),
+            shape: RoundedRectangleBorder(borderRadius: borderRadius),
+            backgroundColor: backgroundColor,
+          ),
           child: Text(
             "$buttonText",
             style: Style.textStyle16

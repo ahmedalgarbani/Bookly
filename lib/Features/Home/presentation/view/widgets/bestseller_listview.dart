@@ -43,7 +43,8 @@ class BestSellerListView extends StatelessWidget {
                 children: [
                   Text(
                     "9.99\$",
-                    style: Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
+                    style:
+                        Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
                   const BookRating(),
                 ],

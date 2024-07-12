@@ -12,10 +12,9 @@ class CustomeCardSlider extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return  Padding(
+          return Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.0),
             child: CustomListViewItem(),
-            
           );
         },
       ),

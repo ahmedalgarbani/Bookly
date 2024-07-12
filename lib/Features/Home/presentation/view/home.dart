@@ -35,7 +35,6 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverFillRemaining(
-
                 child: BestSellerItemListView(),
               ),
             ],
