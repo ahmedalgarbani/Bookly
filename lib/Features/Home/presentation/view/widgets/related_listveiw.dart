@@ -14,7 +14,7 @@ class RelatedListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 2),
-                child: CustomListViewItem());
+                child: CustomListViewItem(ImageUrl: "dd",));
           }),
     );
   }

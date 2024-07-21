@@ -14,7 +14,7 @@ class BookDetailCard extends StatelessWidget {
         Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * .24),
-            child: const CustomListViewItem()),
+            child: const CustomListViewItem(ImageUrl: "sss",)),
         const SizedBox(
           height: 30,
         ),
