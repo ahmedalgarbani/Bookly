@@ -2,6 +2,7 @@ import 'package:Bookly/Features/Home/Data/models/book_model/Repo/Home_repoImp.da
 import 'package:Bookly/Features/Home/Data/models/book_model/book.dart';
 import 'package:Bookly/Features/Home/presentation/view/book_detailes.dart';
 import 'package:Bookly/Features/Home/presentation/view/home.dart';
+import 'package:Bookly/Features/Home/presentation/view_model/search_cubit/search_cubit.dart';
 import 'package:Bookly/Features/Home/presentation/view_model/similarbooks/similar_book_cubit.dart';
 import 'package:Bookly/Features/Splash/presentation/view/splash.dart';
 import 'package:Bookly/Features/search/presentation/view/search.dart';
@@ -26,15 +27,18 @@ abstract class AppRoute {
     GoRoute(
       path: KBookDetailsRouter,
       builder: (context, state) => BlocProvider(
-        create: (context) => SimilarBookCubit(getIt.get<HomeRepoimp>()), 
-        child: BookDetailesView( 
+        create: (context) => SimilarBookCubit(getIt.get<HomeRepoimp>()),
+        child: BookDetailesView(
           bookMoodel: state.extra as Book,
         ),
       ),
     ),
     GoRoute(
       path: KSearchRouter,
-      builder: (context, state) => const SearchPage(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => SearchCubit(getIt.get<HomeRepoimp>()),
+        child: const SearchPage(),
+      ),
     ),
   ]);
 }
