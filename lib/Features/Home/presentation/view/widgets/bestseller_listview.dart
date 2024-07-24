@@ -1,3 +1,4 @@
+import 'package:Bookly/Features/Home/Data/models/book_model/book.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/bestseller_sliderimage.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/book_rating.dart';
 import 'package:Bookly/constant.dart';
@@ -5,13 +6,13 @@ import 'package:Bookly/core/style.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
-
+   BestSellerListView({super.key,required this.book});
+  Book book;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const BestSellerSlideImage(),
+         BestSellerSlideImage(ImageUrl: book.volumeInfo.imageLinks!.thumbnail,),
         const SizedBox(
           width: 15,
         ),
@@ -21,8 +22,8 @@ class BestSellerListView extends StatelessWidget {
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * .5,
-                child: const Text(
-                  "Harry Potter and the Goblet of Fire",
+                child:  Text(
+                  "${book.volumeInfo.title}",
                   style: Style.textStyle20,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -31,8 +32,8 @@ class BestSellerListView extends StatelessWidget {
               const SizedBox(
                 height: 3,
               ),
-              const Text(
-                "3k reviews ",
+               Text(
+                "${book.volumeInfo.authors![0]}",
                 style: Style.textStyle14,
               ),
               const SizedBox(
@@ -42,11 +43,11 @@ class BestSellerListView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "9.99\$",
+                    "FREE",
                     style:
                         Style.textStyle18.copyWith(fontWeight: FontWeight.w600),
                   ),
-                  const BookRating(),
+                   BookRating(),
                 ],
               ),
             ],

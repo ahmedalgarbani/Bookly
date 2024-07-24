@@ -2,6 +2,7 @@ import 'package:Bookly/Features/Home/presentation/view/widgets/bestseller_listvi
 import 'package:Bookly/Features/Home/presentation/view/widgets/bestselleritemlistview.dart';
 import 'package:Bookly/Features/Home/presentation/view/widgets/listview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({super.key});
@@ -33,9 +34,11 @@ class SearchBody extends StatelessWidget {
               child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return const Padding(
+                    return  Padding(
                       padding: EdgeInsets.symmetric(vertical: 4),
-                      child: BestSellerListView(),
+                      child:Container() 
+                      // BestSellerListView()
+                      ,
                     );
                   }))
         ],

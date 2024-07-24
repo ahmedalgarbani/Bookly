@@ -2,10 +2,10 @@ import 'package:Bookly/constant.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerSlideImage extends StatelessWidget {
-  const BestSellerSlideImage({
-    super.key,
+   BestSellerSlideImage({
+    super.key,required this.ImageUrl
   });
-
+  String ImageUrl;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +16,7 @@ class BestSellerSlideImage extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             image: DecorationImage(
-                image: AssetImage(KrowSlide), fit: BoxFit.cover),
+                image: NetworkImage(ImageUrl), fit: BoxFit.cover),
           ),
         ),
       ),

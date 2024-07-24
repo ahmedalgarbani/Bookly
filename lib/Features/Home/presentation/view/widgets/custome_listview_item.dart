@@ -12,7 +12,7 @@ class CustomListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
-      // height: MediaQuery.of(context).size.height * .23,
+      // height: MediaQuery .of(context).size.height * .23,
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: CachedNetworkImage(imageUrl: ImageUrl,fit: BoxFit.fill
