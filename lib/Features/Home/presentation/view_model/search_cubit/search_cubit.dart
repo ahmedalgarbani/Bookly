@@ -13,7 +13,11 @@ class SearchCubit extends Cubit<SearchState> {
     emit(SearchLoading());
     var result = await homeRepo.searchBooks(search: search);
     result.fold((failure) {
+      if(failure.errorMessage == "type 'Null' is not a subtype of type 'lterable<dynamic>'"){
+      emit(SearchFailure(errMessage: 'the $search book is not found'));
+      }else{
       emit(SearchFailure(errMessage: failure.errorMessage));
+      }
     }, (books) {
       emit(SearchSuccess(searchBooks: books));
     });

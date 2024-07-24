@@ -49,7 +49,7 @@ class SearchBody extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: EdgeInsets.symmetric(vertical: 4),
-                          child: Searchlistview(book: books[0]),
+                          child: Searchlistview(book: books[index]),
                         );
                       }),
                 );
